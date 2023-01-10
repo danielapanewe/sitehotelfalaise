@@ -1,0 +1,415 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primarycolor: #C9B200;
+    --black: #000;
+    --white : #fff;
+    --textcolor: #3b3b3b;
+}
+html {
+    font-size: 100%;
+}
+body {
+    font-family: sans-serif;
+    color: var(--textcolor);
+    font-size: 14px;
+    font-weight: 400;
+    background: url(img/back.jpg) left top / cover repeat-y fixed rgb(255, 255, 255);
+
+}
+
+.logo{
+    font-size: 20px;
+    color: var(--primarycolor);
+    text-decoration: none;
+    display: inline-block;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black);
+    position: fixed;
+    width: 100%;
+
+    z-index: 1000;
+
+    /*pour que ce heading soit sticky(surplace) après*/
+    height: 3.5rem;
+    padding: 0 15px;
+}
+.header.sticky {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+/*****NAVIGATION*****/
+.main-nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color:var(--primarycolor);
+    font-weight: 400;
+    transition: all 0.3s;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 16px 16px 6px;
+    text-align: center;
+}
+.main-nav-link:hover,
+.main-nav-link:active {
+    color: #8d7d00;
+}
+.main-nav-link i{
+    font-size: 18px;
+}
+
+/* *********BANNER********** */
+
+.banner{
+    background: url(img/banner.png) center / cover no-repeat;
+    height: 50vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.banner__container{
+    background: rgba(0,0,0,.75);
+    border-bottom: 0;
+    padding: 15px 30px 25px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.banner__element{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__element label{
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 3px;
+    padding-bottom: 5px;
+}
+.banner__element input{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 5px 32px 5px 5px;
+    font-size: 1rem;
+    color: var(--textcolor);
+}
+.banner__submitbtn{
+    padding: 8px 20px;
+    align-self: flex-end;
+    background-color: var(--primarycolor);
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.banner__submitbtn:hover{
+    background-color: #8d7d00;
+}
+
+
+/* ********** ROOM INFORMATION ************* */
+.room{
+    margin-top: 1rem;
+    padding: 0 15px;
+    background-color: var(--white);
+    margin: 1rem 3rem 0 3rem;
+}
+.room__information{
+    
+    display: grid;
+    gap: 1rem;
+}
+.room__container{
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    gap: 1rem;
+
+}
+.room__item{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0.7rem;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+.room__item img{
+    border-radius: 3px;
+    width: 100%;
+}
+.room__detail--content{
+    display: grid;
+    gap: 0.5rem;
+}
+.room__detail{
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+    padding: 10px;
+}
+.room__detail__header{
+    font-size: 21px;
+    color: var(--primarycolor);
+    padding-bottom: 2rem;
+}
+.room__detail__body{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    
+}
+.room__detail--element{
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+}
+.room__detail--element h3{
+    padding-right: 0.8rem;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 0.6rem;
+}
+.room__detail--element p{
+    position: relative;
+}
+.room__detail--element1{
+    padding-right: 20px;
+}
+.room__detail--element2{
+    padding-right: 20px;
+}
+.room__detail--capacityolder,.room__detail--capacitychild{
+    position: relative;
+}
+.room__detail--capacitychild{
+    margin-left: 0.5rem;
+}
+.backimg--person1{
+    background: url(img/person.png) no-repeat;
+    background-position: 0 0;
+    height: 26px;
+    width: 15px;
+    position: absolute;
+    right: 3px;
+    bottom: 6px;
+}
+.backimg--person2{
+    background: url(img/person.png) no-repeat;
+    background-position: -31px 1px;
+    height: 26px;
+    width: 15px;
+    position: absolute;
+    right: 3px;
+    bottom: 6px;
+}
+.room__price--unite{
+    font-size: 18px;
+    color: var(--primarycolor);
+    font-weight: 700;
+}
+.room__price--value{
+    font-size: 26px;
+    color: var(--primarycolor);
+    font-weight: 700;
+}
+.room__priceinformation{
+    font-size: 12px;
+    color: #444;
+    text-align: right;
+}
+
+.room__detail__footer{
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.room__detail__footer--right a{
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--primarycolor);
+}
+.room__detail__footer--left{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.room__detail__remainingroom{
+    font-size: 13px;
+    color: #2f7131;
+    font-weight: 400;
+}
+.addbtn{
+    padding: 8px 10px;
+    color: var(--black);
+    background-color: var(--primarycolor);
+    border-radius: 3px;
+
+}
+.room__resume{
+    background-color: var(--white);
+    border-radius: 0 0 3px 3px;
+    border: 1px solid #ddd;
+}
+.room__resume h3{
+    padding: 10px 15px 9px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+/* *******FOOTER******** */
+.footer{
+    background-color: #2D2D36;
+    padding: 10px;
+    color: var(--white);
+    text-align: center;
+    margin-top: 2rem;
+}
+/* ********MEDIA QUERIES *************** */
+@media (max-width: 59.375em) {
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: grid;
+        background-color: var(--white);
+        height: auto;
+        width: 100%;
+        transform: translateY(-200%);
+        transition: all 0.5s;
+        box-shadow: 0 5px 4px rgb(0 0 0 / 30%);
+    }
+
+    .main-nav-list {
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .header.active .main-nav {
+        transform: translateY(0);
+    }
+
+    .header__icon {
+        position: relative;
+    }
+    .header__icon,
+    .header__icon::before,
+    .header__icon::after {
+        width: 1.6rem;
+        height: 0.16rem;
+        background-color: var(--primarycolor);
+        display: inline-block;
+    }
+    .header__icon::before,
+    .header__icon::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+    }
+    .header__icon::before {
+        top: -0.6rem;
+    }
+    .header__icon::after {
+        top: 0.6rem;
+    }
+    .header.active .header__icon {
+        background-color: transparent;
+    }
+    .header.active .header__icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    .header.active .header__icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    .header__burger {
+        width: 3.8rem;
+        height: 3.8rem;
+        cursor: pointer;
+        position: fixed;
+        top: 0;
+        right: 0;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        z-index: 90;
+    }
+
+    .header__burger:hover .header__icon::before {
+        top: -0.8rem;
+    }
+    .header.active .header__burger:hover .header__icon::before {
+        top: 0;
+    }
+    .header__burger:hover .header__icon::after {
+        top: 0.8rem;
+    }
+    .header.active .header__burger:hover .header__icon::after {
+        top: 0;
+    }
+
+    .unabescroll {
+        overflow: hidden;
+    }
+    .main-nav-list li {
+        width: 100%;
+    }
+    .main-nav-link{
+        flex-direction: row-reverse !important;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        color: var(--textcolor) !important;
+        justify-content: space-between;
+    }
+    .room__resume{
+        display: none;
+    }
+    .room__container{
+        grid-template-columns: 1fr;
+    
+    }
+    .room__item{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px){
+    .logo{
+        font-size: 15px;
+    }
+    .banner{
+        align-items: flex-end;
+    }
+    .room__detail__body{
+        gap: 1rem;
+    }
+}
